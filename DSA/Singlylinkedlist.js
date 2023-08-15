@@ -1,18 +1,24 @@
+// creating a class Node
 class Node{
+    // creating a constructor inside a class Node
     constructor(){
+        // initialize the member varialbe of class like,item and next ;
         this.item = null;
         this.next = null;
     }
 }
+// creating the class called SLL(Singly Linked List)
 class SLL{
+    // creating a constructor inside a SLL class
     constructor(){
         this.start = null;
     }
+    // creating an consturctor to add node at the begin or start of list
     addstart(data){
-        const n = new Node();
-        n.item = data;
-        n.next = this.start;
-        this.start = n;
+        const n = new Node(); // creating a new node call n ;
+        n.item = data; // put the data inside a n node of item
+        n.next = this.start; // puth the null  to the n node of next;
+        this.start = n; // pointing the start to the n node;
     }
     addend(data){
         const n = new Node();
@@ -44,6 +50,15 @@ class SLL{
             this.start.next = t1;
         }
     }
+    count(){
+        let temp,count=0;
+        temp = this.start;
+        while(temp!=null){
+            count++;
+            temp = temp.next;
+        }
+        console.log(count);
+    }
     printlist(){
         let temp = new Node;
         temp = this.start;
@@ -51,7 +66,7 @@ class SLL{
             console.log(temp.item + " ");
             temp = temp.next;
         }
-        console.log("");
+        console.log("\n");
     }
 }
 // Deriver program for checking is working or not;
@@ -64,3 +79,4 @@ s.printlist();
 console.log("Reverse linked List");
 s.reverselist();
 s.printlist();
+console.log(s.count());

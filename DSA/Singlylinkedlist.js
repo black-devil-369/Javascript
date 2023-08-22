@@ -11,7 +11,8 @@ class Node{
 class SLL{
     // creating a constructor inside a SLL class
     constructor(){
-        this.start = null;
+        //this.start = new Node()
+        this.start = null
     }
     // creating an consturctor to add node at the begin or start of list
     addstart(data){
@@ -66,7 +67,7 @@ class SLL{
             console.log(temp.item + " ");
             temp = temp.next;
         }
-        console.log("\n");
+        console.log("");
     }
 }
 // Deriver program for checking is working or not;

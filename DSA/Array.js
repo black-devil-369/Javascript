@@ -51,7 +51,7 @@ console.log(a.isEmpty());
 console.log(a.isFull());
 console.log(a.count());
 for(let i = 0;i<a.count();i++){
-    console.log(a.get(i)+ " ");
+    console.log(a.get(i));
 }
 a.insert(2,500);
 console.log("After inserting data at a specific index");

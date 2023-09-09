@@ -1,3 +1,4 @@
+"use strict";
 class Arrays{
     // this is variable in class
     capacity;
@@ -41,15 +42,34 @@ class Arrays{
         if(index>=this.lastindex || index<=this.capacity-1)
            this.ptr[index]=data;
     }
+    sort(){
+        if(!this.isEmpty()){
+            for(let i =0;i<this.lastindex;i++){
+                let min_idx = i;
+                for(let j =i+1;j<this.lastindex;j++){
+                    if(this.ptr[j]>this.ptr[min_idx]){
+                        min_idx = j;
+                    }
+                }
+                let temp = this.ptr[min_idx];
+                this.ptr[min_idx] = this.ptr[i];
+                this.ptr[i] = temp;
+            }
+        }
+    }
 }
 const  a = new Arrays(4);
 a.append(56);
 a.append(35);
 a.append(90);
 a.append(39);
+for(let i = 0;i<a.count();i++){
+    console.log(a.get(i));
+}
 console.log(a.isEmpty());
 console.log(a.isFull());
 console.log(a.count());
+a.sort();
 for(let i = 0;i<a.count();i++){
     console.log(a.get(i));
 }

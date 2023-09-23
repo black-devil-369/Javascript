@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure used in real world</title>
+</head>
+<body>
+    <button id="shiva">Orange</button>
+    <button id="blue">Blue</button>
+    <button id="navy">Navy</button>
+    <button id="golden">Golden</button>
+    <button id = "shivam">Red</button>
+    <nav>
+        <button id="home"><a href="index.html"></a>Home</button>
+</nav>
+</body>
+<script>
+    function clickHander(name){
+        return function(){
+            document.body.style.backgroundColor =`${name}`
+        }
+    }
+    function clickfunction(name,a){
+        return () =>{
+            document.body.style.backgroundColor = `${name}`;
+            document.body.style.border = `${a}`
+        }
+    }
+    document.getElementById("shiva").onclick = clickHander
+    ("orange");
+    document.getElementById("blue").onclick = clickHander
+    ("blue");
+    document.getElementById("navy").onclick = clickHander
+    ("navy");
+    document.getElementById("golden").onclick = clickHander
+    ("gold");
+    document.getElementById("home").onclick = clickfunction
+    ("yellow")
+    document.getElementById("shivam").onclick = clickfunction
+    ("red");
+</script>
+</html>
